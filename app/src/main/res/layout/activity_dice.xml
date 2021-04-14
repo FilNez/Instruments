@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".Flashlight"
     android:background="@color/black">
 
     <TextView
@@ -11,45 +11,51 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Инструменты"
-        android:textSize="30sp"
+        android:textSize="40sp"
         android:textColor="@color/white"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:text="Игральные кости"/>
 
-    <Button
-        android:id="@+id/dice_app"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/coinflip_app"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"
-        android:text="Игральные кости"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
 
-    <Button
-        android:id="@+id/coinflip_app"
+    <TextView
+        android:id="@+id/dice_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_above="@id/retarded"
+        android:text="1"
+        android:textSize="40sp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/retarded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"
-        android:text="Орёл и решка"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:layout_centerHorizontal="true"
+        android:text=""/>
 
-    <Button
-        android:id="@+id/flashlight_app"
+    <TextView
+        android:id="@+id/dice_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/coinflip_app"
+        android:layout_below="@+id/retarded"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
+        android:text="2"
+        android:textSize="40sp"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/flip_dice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:textSize="20sp"
         android:backgroundTint="@color/white"
         android:textColor="@color/black"
-        android:text="Фонарик"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:text="Размешать кости"/>
 
 </RelativeLayout>

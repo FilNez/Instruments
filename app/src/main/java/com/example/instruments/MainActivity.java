@@ -26,6 +26,9 @@ import com.karumi.dexter.listener.single.PermissionListener;
 public class MainActivity extends AppCompatActivity {
 
     private Button flashlight_button;
+    private Button coinflip_button;
+    private Button dice_button;
+
     private Context context;
     private PackageManager pm;
 
@@ -37,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         flashlight_button = (Button) findViewById(R.id.flashlight_app);
+        coinflip_button = (Button) findViewById(R.id.coinflip_app);
+        dice_button = (Button) findViewById(R.id.dice_app);
 
         context = this;
         pm = context.getPackageManager();
@@ -63,7 +68,19 @@ public class MainActivity extends AppCompatActivity {
             }
         }).check();
 
+        coinflip_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openCoinflipActivity();
+            }
+        });
 
+        dice_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDiceActivity();
+            }
+        });
     }
 
     public void openFlashlightActivity() {
@@ -71,5 +88,15 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, Flashlight.class);
             startActivity(intent);
         }
+    }
+
+    public void openCoinflipActivity() {
+        Intent intent = new Intent(this, Coinflip.class);
+        startActivity(intent);
+    }
+
+    public void openDiceActivity() {
+        Intent intent = new Intent(this, Dice.class);
+        startActivity(intent);
     }
 }
