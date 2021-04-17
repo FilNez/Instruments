@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Instruments">
-        <activity android:name=".Dice"></activity>
+        <activity android:name=".Counter"></activity>
+        <activity android:name=".Dice" />
         <activity android:name=".Coinflip" />
         <activity android:name=".Flashlight" />
         <activity android:name=".MainActivity">

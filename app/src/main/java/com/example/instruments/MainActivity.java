@@ -28,11 +28,10 @@ public class MainActivity extends AppCompatActivity {
     private Button flashlight_button;
     private Button coinflip_button;
     private Button dice_button;
+    private Button counter_button;
 
     private Context context;
     private PackageManager pm;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         flashlight_button = (Button) findViewById(R.id.flashlight_app);
         coinflip_button = (Button) findViewById(R.id.coinflip_app);
         dice_button = (Button) findViewById(R.id.dice_app);
+        counter_button = (Button) findViewById(R.id.counter_app);
 
         context = this;
         pm = context.getPackageManager();
@@ -81,6 +81,13 @@ public class MainActivity extends AppCompatActivity {
                 openDiceActivity();
             }
         });
+
+        counter_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openCounterActivity();
+            }
+        });
     }
 
     public void openFlashlightActivity() {
@@ -97,6 +104,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void openDiceActivity() {
         Intent intent = new Intent(this, Dice.class);
+        startActivity(intent);
+    }
+
+    public void openCounterActivity() {
+        Intent intent = new Intent(this, Counter.class);
         startActivity(intent);
     }
 }

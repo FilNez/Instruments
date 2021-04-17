@@ -11,56 +11,60 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Инструменты"
+        android:text="Счетчик"
         android:textSize="30sp"
         android:textColor="@color/white"
         android:textStyle="bold"/>
 
-    <Button
-        android:id="@+id/dice_app"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/coinflip_app"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"
-        android:text="Игральные кости"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
-
-    <Button
-        android:id="@+id/coinflip_app"
+    <TextView
+        android:id="@+id/count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_marginHorizontal="20dp"
+        android:text="0"
+        android:textSize="30sp"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/button_plus"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_toEndOf="@id/count"
+        android:layout_centerVertical="true"
         android:backgroundTint="@color/white"
         android:textColor="@color/black"
-        android:text="Орёл и решка"
+        android:text="+"
+        android:textStyle="bold"
+        android:textSize="20sp"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <Button
-        android:id="@+id/flashlight_app"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/coinflip_app"
-        android:layout_centerHorizontal="true"
+        android:id="@+id/button_minus"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_toStartOf="@id/count"
+        android:layout_centerVertical="true"
         android:backgroundTint="@color/white"
         android:textColor="@color/black"
-        android:text="Фонарик"
+        android:text="-"
+        android:textStyle="bold"
+        android:textSize="20sp"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <Button
-        android:id="@+id/counter_app"
+        android:id="@+id/button_reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/flashlight_app"
         android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
         android:backgroundTint="@color/white"
         android:textColor="@color/black"
-        android:text="Счетчик"
+        android:text="RESET"
+        android:textSize="20sp"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
