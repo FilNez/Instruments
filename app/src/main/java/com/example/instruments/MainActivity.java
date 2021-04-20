@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private Button coinflip_button;
     private Button dice_button;
     private Button counter_button;
+    private Button level_button;
 
     private Context context;
     private PackageManager pm;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         coinflip_button = (Button) findViewById(R.id.coinflip_app);
         dice_button = (Button) findViewById(R.id.dice_app);
         counter_button = (Button) findViewById(R.id.counter_app);
+        level_button = (Button) findViewById(R.id.level_app);
 
         context = this;
         pm = context.getPackageManager();
@@ -88,6 +90,13 @@ public class MainActivity extends AppCompatActivity {
                 openCounterActivity();
             }
         });
+
+        level_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLevelActivity();
+            }
+        });
     }
 
     public void openFlashlightActivity() {
@@ -109,6 +118,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void openCounterActivity() {
         Intent intent = new Intent(this, Counter.class);
+        startActivity(intent);
+    }
+
+    public void openLevelActivity() {
+        Intent intent = new Intent(this, Level.class);
         startActivity(intent);
     }
 }

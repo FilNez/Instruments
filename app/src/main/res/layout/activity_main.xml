@@ -17,6 +17,18 @@
         android:textStyle="bold"/>
 
     <Button
+        android:id="@+id/level_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/dice_app"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:text="Уровень"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <Button
         android:id="@+id/dice_app"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
