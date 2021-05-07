@@ -2,6 +2,7 @@ package com.example.instruments;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +15,10 @@ public class Counter extends AppCompatActivity {
     private Button reset_button;
     private TextView count_text;
 
-    private int count = 0;
+    private int count;
+
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String COUNT = "count";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +29,9 @@ public class Counter extends AppCompatActivity {
         minus_button = (Button) findViewById(R.id.button_minus);
         reset_button = (Button) findViewById(R.id.button_reset);
         count_text = (TextView) findViewById(R.id.count);
+
+        count = loadCount();
+        count_text.setText(count + "");
 
         plus_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,5 +68,23 @@ public class Counter extends AppCompatActivity {
             count += number;
             count_text.setText(count + "");
         }
+        saveCount();
+    }
+
+    public void saveCount() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putInt(COUNT, count);
+
+        editor.apply();
+
+        Toast.makeText(this, "Успех", Toast.LENGTH_SHORT);
+    }
+
+    public int loadCount() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+
+        return sharedPreferences.getInt(COUNT, 0);
     }
 }
