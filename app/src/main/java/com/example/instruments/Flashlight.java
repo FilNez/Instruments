@@ -1,17 +1,14 @@
 package com.example.instruments;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.hardware.Camera;
-import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Flashlight extends AppCompatActivity {
 
@@ -41,8 +38,10 @@ public class Flashlight extends AppCompatActivity {
                     String cameraId = cameraManager.getCameraIdList()[0];
                     cameraManager.setTorchMode(cameraId, true);
                 }
-                catch (CameraAccessException e)
-                {}
+                catch (Exception e)
+                {
+                    Toast.makeText(Flashlight.this, "Flashlight error", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -59,8 +58,10 @@ public class Flashlight extends AppCompatActivity {
                     String cameraId = cameraManager.getCameraIdList()[0];
                     cameraManager.setTorchMode(cameraId, false);
                 }
-                catch (CameraAccessException e)
-                {}
+                catch (Exception e)
+                {
+                    Toast.makeText(Flashlight.this, "Flashlight error", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

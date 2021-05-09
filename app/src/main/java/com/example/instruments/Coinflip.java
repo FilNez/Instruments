@@ -5,23 +5,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Coinflip extends AppCompatActivity {
 
-    private TextView tails_text;
-    private TextView heads_text;
+    private ImageView coin;
     private Button flip_coin_button;
 
     private int random_number;
+
+    int[] images = {R.drawable.ic_heads, R.drawable.ic_tails};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coinflip);
 
-        tails_text = (TextView) findViewById(R.id.tails);
-        heads_text = (TextView) findViewById(R.id.heads);
+        coin = (ImageView) findViewById(R.id.coin);
 
         flip_coin_button = (Button) findViewById(R.id.flip_coin_button);
 
@@ -30,23 +31,8 @@ public class Coinflip extends AppCompatActivity {
             public void onClick(View v) {
                 random_number = (int)(Math.random()*2);
 
-                if (random_number == 1) {
-                    setHeads();
-                }
-                else {
-                    setTails();
-                }
+                coin.setImageResource(images[random_number]);
             }
         });
-    }
-
-    public void setTails() {
-        tails_text.setVisibility(View.VISIBLE);
-        heads_text.setVisibility(View.GONE);
-    }
-
-    public void setHeads() {
-        tails_text.setVisibility(View.GONE);
-        heads_text.setVisibility(View.VISIBLE);
     }
 }

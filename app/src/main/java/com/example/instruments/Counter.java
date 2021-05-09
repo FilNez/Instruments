@@ -31,7 +31,7 @@ public class Counter extends AppCompatActivity {
         count_text = (TextView) findViewById(R.id.count);
 
         count = loadCount();
-        count_text.setText(count + "");
+        count_text.setText(String.valueOf(count));
 
         plus_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +56,7 @@ public class Counter extends AppCompatActivity {
     public void update_counter(int number) {
         if (number == 0) {
             count = 0;
-            count_text.setText(count + "");
+            count_text.setText(String.valueOf(count));
         }
         else if (count + number > 9999) {
             Toast.makeText(Counter.this, "Number is too big", Toast.LENGTH_SHORT).show();
@@ -66,7 +66,7 @@ public class Counter extends AppCompatActivity {
         }
         else {
             count += number;
-            count_text.setText(count + "");
+            count_text.setText(String.valueOf(count));
         }
         saveCount();
     }
@@ -78,8 +78,6 @@ public class Counter extends AppCompatActivity {
         editor.putInt(COUNT, count);
 
         editor.apply();
-
-        Toast.makeText(this, "Успех", Toast.LENGTH_SHORT);
     }
 
     public int loadCount() {

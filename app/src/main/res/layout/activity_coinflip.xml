@@ -16,27 +16,14 @@
         android:textStyle="bold"
         android:text="Орёл и решка"/>
 
-    <TextView
-        android:id="@+id/heads"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/coin"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_heads"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:text="Heads"
-        android:textSize="40sp"
-        android:textColor="@color/white"
         android:visibility="visible"/>
-
-    <TextView
-        android:id="@+id/tails"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:text="Tails"
-        android:textSize="40sp"
-        android:textColor="@color/white"
-        android:visibility="gone"/>
 
     <Button
         android:id="@+id/flip_coin_button"

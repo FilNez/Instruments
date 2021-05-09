@@ -35,7 +35,7 @@ public class Level extends AppCompatActivity {
         public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
         }
-    };;
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
