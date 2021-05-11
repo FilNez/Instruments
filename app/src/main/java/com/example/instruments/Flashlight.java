@@ -12,8 +12,8 @@ import android.widget.Toast;
 
 public class Flashlight extends AppCompatActivity {
 
-    private ImageButton switchOff;
-    private ImageButton switchOn;
+    private ImageButton switchOffButton;
+    private ImageButton switchOnButton;
     private TextView text;
 
     @Override
@@ -21,50 +21,60 @@ public class Flashlight extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flashlight);
 
-        switchOff = (ImageButton) findViewById(R.id.flashlight_is_on);
-        switchOn = (ImageButton) findViewById(R.id.flashlight_is_off);
+        switchOffButton = (ImageButton) findViewById(R.id.flashlight_is_on);
+        switchOnButton = (ImageButton) findViewById(R.id.flashlight_is_off);
         text = (TextView) findViewById(R.id.flashlight_condition);
 
-        switchOn.setOnClickListener(new View.OnClickListener() {
+        switchOff();
+
+        switchOnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                text.setText("ON");
-                switchOff.setVisibility(View.VISIBLE);
-                switchOn.setVisibility(View.GONE);
-
-                CameraManager cameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
-
-                try {
-                    String cameraId = cameraManager.getCameraIdList()[0];
-                    cameraManager.setTorchMode(cameraId, true);
-                }
-                catch (Exception e)
-                {
-                    Toast.makeText(Flashlight.this, "Flashlight error", Toast.LENGTH_SHORT).show();
-                }
+                switchOn();
             }
         });
 
-        switchOff.setOnClickListener(new View.OnClickListener() {
+        switchOffButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                text.setText("OFF");
-                switchOff.setVisibility(View.GONE);
-                switchOn.setVisibility(View.VISIBLE);
-
-                CameraManager cameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
-
-                try {
-                    String cameraId = cameraManager.getCameraIdList()[0];
-                    cameraManager.setTorchMode(cameraId, false);
-                }
-                catch (Exception e)
-                {
-                    Toast.makeText(Flashlight.this, "Flashlight error", Toast.LENGTH_SHORT).show();
-                }
+                switchOff();
             }
         });
     }
 
+    public void switchOn() {
+        text.setText("ON");
+        switchOffButton.setVisibility(View.VISIBLE);
+        switchOnButton.setVisibility(View.GONE);
+
+        CameraManager cameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
+
+        try {
+            String cameraId = cameraManager.getCameraIdList()[0];
+
+            cameraManager.setTorchMode(cameraId, true);
+        }
+        catch (Exception e)
+        {
+            Toast.makeText(Flashlight.this, "Flashlight error", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void switchOff() {
+        text.setText("OFF");
+        switchOnButton.setVisibility(View.VISIBLE);
+        switchOffButton.setVisibility(View.GONE);
+
+        CameraManager cameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
+
+        try {
+            String cameraId = cameraManager.getCameraIdList()[0];
+            cameraManager.setTorchMode(cameraId, false);
+        }
+        catch (Exception e)
+        {
+            Toast.makeText(Flashlight.this, "Flashlight error", Toast.LENGTH_SHORT).show();
+        }
+    }
 
 }
