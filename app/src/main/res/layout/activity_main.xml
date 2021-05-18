@@ -6,75 +6,62 @@
     tools:context=".MainActivity"
     android:background="@color/black">
 
-    <TextView
-        android:id="@+id/title_text"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_centerHorizontal="true"
-        android:text="Инструменты"
-        android:textSize="30sp"
-        android:textColor="@color/white"
-        android:textStyle="bold"/>
+        android:layout_centerVertical="true">
 
+        <Button
+            android:id="@+id/flashlight_app"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:text="Фонарик"
+            android:textColor="@color/black"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
 
-    <Button
-        android:id="@+id/level_app"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/dice_app"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"
-        android:text="Уровень"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        <Button
+            android:id="@+id/coinflip_app"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:text="Орёл и решка"
+            android:textColor="@color/black"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
 
-    <Button
-        android:id="@+id/dice_app"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/coinflip_app"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"
-        android:text="Игральные кости"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        <Button
+            android:id="@+id/dice_app"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:text="Игральные кости"
+            android:textColor="@color/black"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
 
-    <Button
-        android:id="@+id/coinflip_app"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"
-        android:text="Орёл и решка"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        <Button
+            android:id="@+id/counter_app"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:text="Счетчик"
+            android:textColor="@color/black"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
 
-    <Button
-        android:id="@+id/flashlight_app"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/coinflip_app"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"
-        android:text="Фонарик"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
-
-    <Button
-        android:id="@+id/counter_app"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/flashlight_app"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"
-        android:text="Счетчик"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        <Button
+            android:id="@+id/level_app"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:text="Уровень"
+            android:textColor="@color/black"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+    </LinearLayout>
 
 </RelativeLayout>

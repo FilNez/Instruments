@@ -7,16 +7,16 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Инструменты"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Instruments">
-        <activity android:name=".Level"></activity>
-        <activity android:name=".Counter" />
-        <activity android:name=".Dice" />
-        <activity android:name=".Coinflip" />
-        <activity android:name=".Flashlight" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Level" android:screenOrientation="landscape" android:label="Уровень"/>
+        <activity android:name=".Counter" android:screenOrientation="portrait" android:label="Счетчик"/>
+        <activity android:name=".Dice" android:screenOrientation="portrait" android:label="Кости"/>
+        <activity android:name=".Coinflip" android:screenOrientation="portrait" android:label="Орёл и решка"/>
+        <activity android:name=".Flashlight" android:screenOrientation="portrait" android:label="Фонарик"/>
+        <activity android:name=".MainActivity" android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
