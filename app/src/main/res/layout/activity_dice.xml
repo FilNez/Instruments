@@ -12,7 +12,8 @@
         android:layout_height="100dp"
         android:src="@drawable/ic_dado_6"
         android:layout_above="@id/center"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/first_dice_image_description" />
 
     <TextView
         android:id="@+id/center"
@@ -28,7 +29,8 @@
         android:layout_height="100dp"
         android:src="@drawable/ic_dado_6"
         android:layout_below="@id/center"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/second_dice_image_description" />
 
     <Button
         android:id="@+id/flip_dice"

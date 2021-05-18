@@ -10,4 +10,7 @@
     <string name="name_dice">Игральные кости</string>
     <string name="name_counter">Счетчик</string>
     <string name="name_level">Уровень</string>
+    <string name="heads_and_tails_image_description">Heads and tails image</string>
+    <string name="first_dice_image_description">First dice image</string>
+    <string name="second_dice_image_description">Second dice image</string>
 </resources>
