@@ -14,7 +14,7 @@
         android:textSize="40sp"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:text="OFF"/>
+        android:text=""/>
 
     <ImageButton
         android:id="@+id/flashlight_is_off"

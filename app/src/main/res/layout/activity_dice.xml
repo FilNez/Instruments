@@ -40,6 +40,6 @@
         android:textSize="20sp"
         android:backgroundTint="@color/white"
         android:textColor="@color/black"
-        android:text="Размешать кости"/>
+        android:text="@string/flip_dice"/>
 
 </RelativeLayout>

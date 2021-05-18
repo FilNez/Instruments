@@ -2,6 +2,7 @@ package com.example.instruments;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
@@ -42,6 +43,7 @@ public class Flashlight extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("SetTextI18n")
     public void switchOn() {
         text.setText("ON");
         switchOffButton.setVisibility(View.VISIBLE);
@@ -60,6 +62,7 @@ public class Flashlight extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     public void switchOff() {
         text.setText("OFF");
         switchOnButton.setVisibility(View.VISIBLE);

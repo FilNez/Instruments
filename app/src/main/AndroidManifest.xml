@@ -5,17 +5,16 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
-        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Инструменты"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Instruments">
-        <activity android:name=".Level" android:screenOrientation="landscape" android:label="Уровень"/>
-        <activity android:name=".Counter" android:screenOrientation="portrait" android:label="Счетчик"/>
-        <activity android:name=".Dice" android:screenOrientation="portrait" android:label="Кости"/>
-        <activity android:name=".Coinflip" android:screenOrientation="portrait" android:label="Орёл и решка"/>
-        <activity android:name=".Flashlight" android:screenOrientation="portrait" android:label="Фонарик"/>
+        <activity android:name=".Level" android:screenOrientation="landscape" android:label="@string/name_level"/>
+        <activity android:name=".Counter" android:screenOrientation="portrait" android:label="@string/name_counter"/>
+        <activity android:name=".Dice" android:screenOrientation="portrait" android:label="@string/name_dice"/>
+        <activity android:name=".Coinflip" android:screenOrientation="portrait" android:label="@string/name_heads_and_tails"/>
+        <activity android:name=".Flashlight" android:screenOrientation="portrait" android:label="@string/name_flashlight"/>
         <activity android:name=".MainActivity" android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

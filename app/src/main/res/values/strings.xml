@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Instruments</string>
+    <string name="flip_coin">Подкинуть монетку</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="reset_counter">RESET</string>
+    <string name="flip_dice">Размешать кости</string>
+    <string name="name_flashlight">Фонарик</string>
+    <string name="name_heads_and_tails">Орёл и решка</string>
+    <string name="name_dice">Игральные кости</string>
+    <string name="name_counter">Счетчик</string>
+    <string name="name_level">Уровень</string>
 </resources>
