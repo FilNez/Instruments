@@ -52,18 +52,8 @@ public class Dice extends AppCompatActivity {
     }
 
     public void updateImage() {
-        dice_1.setImageResource(images[random_number_1]);
-        dice_2.setImageResource(images[random_number_2]);
-
-        /*
-        dice_1.startAnimation(AnimationUtils.loadAnimation(
-                getApplicationContext(),
-                R.anim.zoom_in
-        ));
-        dice_2.startAnimation(AnimationUtils.loadAnimation(
-                getApplicationContext(),
-                R.anim.zoom_in
-        ));*/
+        playAnimation(dice_1, random_number_1);
+        playAnimation(dice_2, random_number_2);
 
         saveData();
     }
@@ -85,4 +75,28 @@ public class Dice extends AppCompatActivity {
         random_number_2 =  sharedPreferences.getInt(RANDOM_NUMBER_2, 0);
     }
 
+    public void playAnimation(ImageView object, int number) {
+        Animation zoom_out = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom_out);
+        Animation zoom_in = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom_in);
+
+        zoom_out.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                object.setImageResource(images[number]);
+                object.startAnimation(zoom_in);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        object.startAnimation(zoom_out);
+    }
 }
