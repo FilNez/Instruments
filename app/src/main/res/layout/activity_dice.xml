@@ -1,47 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Flashlight"
-    android:background="@color/black">
+    android:background="@color/black"
+    tools:context=".Flashlight">
 
     <ImageView
         android:id="@+id/dice_1"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="@string/first_dice_image_description"
         android:src="@drawable/ic_dado_6"
-        android:layout_above="@id/center"
-        android:layout_centerHorizontal="true"
-        android:contentDescription="@string/first_dice_image_description" />
+        app:layout_constraintBottom_toTopOf="@+id/center"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
-    <TextView
+    <Space
         android:id="@+id/center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:text=""/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/dice_2"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/second_dice_image_description"
         android:src="@drawable/ic_dado_6"
-        android:layout_below="@id/center"
-        android:layout_centerHorizontal="true"
-        android:contentDescription="@string/second_dice_image_description" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/center" />
 
     <Button
         android:id="@+id/flip_dice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp"
-        android:textSize="20sp"
         android:backgroundTint="@color/white"
+        android:text="@string/flip_dice"
         android:textColor="@color/black"
-        android:text="@string/flip_dice"/>
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

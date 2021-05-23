@@ -2,8 +2,8 @@ package com.example.instruments;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
 import android.view.View;
@@ -13,48 +13,44 @@ import android.widget.Toast;
 
 public class Flashlight extends AppCompatActivity {
 
-    private ImageButton switchOffButton;
-    private ImageButton switchOnButton;
+    private ImageButton switchButton;
     private TextView text;
+
+    private boolean flashlight_is_on = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flashlight);
 
-        switchOffButton = (ImageButton) findViewById(R.id.flashlight_is_on);
-        switchOnButton = (ImageButton) findViewById(R.id.flashlight_is_off);
+        switchButton = (ImageButton) findViewById(R.id.flashlight_switch);
         text = (TextView) findViewById(R.id.flashlight_condition);
 
         switchOff();
 
-        switchOnButton.setOnClickListener(new View.OnClickListener() {
+        switchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switchOn();
-            }
-        });
-
-        switchOffButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switchOff();
+                if (flashlight_is_on)
+                    switchOff();
+                else
+                    switchOn();
             }
         });
     }
 
-    @SuppressLint("SetTextI18n")
     public void switchOn() {
-        text.setText("ON");
-        switchOffButton.setVisibility(View.VISIBLE);
-        switchOnButton.setVisibility(View.GONE);
-
         CameraManager cameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
 
         try {
             String cameraId = cameraManager.getCameraIdList()[0];
-
             cameraManager.setTorchMode(cameraId, true);
+
+            flashlight_is_on = true;
+
+            text.setText("ON");
+            switchButton.setBackgroundColor(Color.GREEN);
+
         }
         catch (Exception e)
         {
@@ -62,17 +58,18 @@ public class Flashlight extends AppCompatActivity {
         }
     }
 
-    @SuppressLint("SetTextI18n")
     public void switchOff() {
-        text.setText("OFF");
-        switchOnButton.setVisibility(View.VISIBLE);
-        switchOffButton.setVisibility(View.GONE);
-
         CameraManager cameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
 
         try {
             String cameraId = cameraManager.getCameraIdList()[0];
             cameraManager.setTorchMode(cameraId, false);
+
+            flashlight_is_on = false;
+
+            text.setText("OFF");
+            switchButton.setBackgroundColor(Color.WHITE);
+
         }
         catch (Exception e)
         {
