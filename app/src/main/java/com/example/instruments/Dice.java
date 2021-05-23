@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -51,6 +54,16 @@ public class Dice extends AppCompatActivity {
     public void updateImage() {
         dice_1.setImageResource(images[random_number_1]);
         dice_2.setImageResource(images[random_number_2]);
+
+        /*
+        dice_1.startAnimation(AnimationUtils.loadAnimation(
+                getApplicationContext(),
+                R.anim.zoom_in
+        ));
+        dice_2.startAnimation(AnimationUtils.loadAnimation(
+                getApplicationContext(),
+                R.anim.zoom_in
+        ));*/
 
         saveData();
     }
