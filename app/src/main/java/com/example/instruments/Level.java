@@ -9,14 +9,12 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class Level extends AppCompatActivity {
 
     private double x_acceleration;
     private double y_acceleration;
-    private double z_acceleration;
 
     private SensorManager sensorManager;
     private Sensor accelerometer;
@@ -25,7 +23,6 @@ public class Level extends AppCompatActivity {
         public void onSensorChanged(SensorEvent event) {
             x_acceleration = (double) Math.round(event.values[0]*100)/100;
             y_acceleration = (double) Math.round(event.values[1]*100)/100;
-            z_acceleration = (double) Math.round(event.values[2]*100)/100;
 
             ConstraintLayout cl = (ConstraintLayout) findViewById(R.id.constraint_layout);
             ConstraintSet cs = new ConstraintSet();
