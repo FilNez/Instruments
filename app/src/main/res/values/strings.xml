@@ -13,6 +13,5 @@
     <string name="heads_and_tails_image_description">Heads and tails image</string>
     <string name="first_dice_image_description">First dice image</string>
     <string name="second_dice_image_description">Second dice image</string>
-    <string name="turn_off_flashlight_button_description">Turn off flashlight button</string>
-    <string name="turn_on_flashlight_button_description">Turn on flashlight button</string>
+    <string name="switch_flashlight_button_description">Toggle flashlight button</string>
 </resources>
